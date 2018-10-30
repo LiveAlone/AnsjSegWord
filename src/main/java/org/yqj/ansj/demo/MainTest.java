@@ -2,7 +2,10 @@ package org.yqj.ansj.demo;
 
 import com.google.common.base.Stopwatch;
 import org.ansj.splitWord.analysis.ToAnalysis;
+import org.nlpcn.commons.lang.jianfan.JianFan;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -14,6 +17,28 @@ import java.util.concurrent.TimeUnit;
  */
 public class MainTest {
     public static void main(String[] args) {
+//        String origin = "它们 在我 遇到 困难 时 助我一臂之力";
+//        ToAnalysis.parse(origin).getTerms().forEach(s-> System.out.println(s.getName()));
+//        jfConvert();
+        List<String> strings = new ArrayList<>();
+        for (int i = 0; i < 10; i++){
+            strings.add(String.valueOf(i));
+        }
+        System.out.println(strings);
+//        System.out.println(strings.subList(0, strings.size()));
+        System.out.println(String.join(" ", strings));
+    }
+
+    /**
+     * 简体繁体相互转换
+     */
+    public static void jfConvert(){
+        System.out.println(JianFan.f2j("生命不息，奮鬥不止"));
+        System.out.println(JianFan.j2f("小学生作文大全整理龙龙"));
+        System.out.println(JianFan.f2j("小学生作文大全整理龙龙"));
+    }
+
+    public static void ansjSplit(String[] args) {
         for (String string : strings) {
             Stopwatch stopwatch = Stopwatch.createStarted();
             int count = ToAnalysis.parse(string).getTerms().size();
