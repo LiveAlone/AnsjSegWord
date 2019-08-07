@@ -4,8 +4,6 @@ import com.google.common.base.Stopwatch;
 import org.ansj.splitWord.analysis.ToAnalysis;
 import org.nlpcn.commons.lang.jianfan.JianFan;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -17,16 +15,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class MainTest {
     public static void main(String[] args) {
-//        String origin = "它们 在我 遇到 困难 时 助我一臂之力";
-//        ToAnalysis.parse(origin).getTerms().forEach(s-> System.out.println(s.getName()));
-//        jfConvert();
-        List<String> strings = new ArrayList<>();
-        for (int i = 0; i < 10; i++){
-            strings.add(String.valueOf(i));
-        }
-        System.out.println(strings);
-//        System.out.println(strings.subList(0, strings.size()));
-        System.out.println(String.join(" ", strings));
+        String origin = "还想再看一遍101刚开始比赛的时候";
+        ToAnalysis.parse(origin).getTerms().forEach(s-> System.out.println(s.getName()));
     }
 
     /**
